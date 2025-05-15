@@ -74,16 +74,16 @@ Card draw(Card deck[], int *top)
     switch (card.nipe)
     {
     case HEART:
-        printf(" de Copas.\n");
+        printf(" de Copas.\n\n");
         break;
     case DIAMOND:
-        printf(" de Diamantes.\n");
+        printf(" de Diamantes.\n\n");
         break;
     case CLUB:
-        printf(" de Paus.\n");
+        printf(" de Paus.\n\n");
         break;
     case SPADE:
-        printf(" de Espadas.\n");
+        printf(" de Espadas.\n\n");
         break;
     default:
         printf("Erro inesperado, valor da Enum: %d\n", card.nipe);

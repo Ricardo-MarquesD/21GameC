@@ -31,6 +31,10 @@ int main(int argc, char const *argv[])
 
         printf("Quantos Jogadores: ");
         scanf("%d", &players);
+        if(players > 4){
+            printf("Quantidade maxima de jogadores é 4, repita o codigo");
+            continue;
+        }
         system("cls");
 
         while (flag2)
@@ -46,7 +50,7 @@ int main(int argc, char const *argv[])
             }
             int online[MAX_PLAYERS] = {0};
 
-            for (int i = 0; i < players; i++) online[i] = 1; // Todos começam ativos
+            for (int i = 0; i < players; i++) online[i] = 1;
 
             create_deck(deck);
             shuffle(deck);
@@ -78,7 +82,7 @@ int main(int argc, char const *argv[])
                             }
                             else if (points == -1)
                             {
-                                printf("Jogador %d estourou!\n", j + 1);
+                                printf("Jogador %d estourou!\n\n", j + 1);
                                 online[j] = 0;
                             }
                         }
