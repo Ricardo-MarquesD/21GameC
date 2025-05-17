@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include "blajac.h"
 
-#define MAX_CARD_HAND 15
 #define MAX_PLAYERS 4
+#define MAX_CARD_HAND 15
 
 int main(int argc, char const *argv[]) {
+
   int players = 1, flag = 0;
 
-  title_game();
+  title_game(); 
   scanf("%d", &flag);
 
   if (flag != 1) {
@@ -23,7 +24,7 @@ int main(int argc, char const *argv[]) {
     printf("Quantos Jogadores: ");
     scanf("%d", &players);
     if (players > MAX_PLAYERS || players < 2) {
-      printf("Quantidade de jogadores invalida \n\r");
+      printf("Quantidade de jogadores invalida\n\r");
       continue;
     }
     system("clear");
@@ -47,9 +48,9 @@ int main(int argc, char const *argv[]) {
       shuffle(deck);
 
       for (int i = 0; i < MAX_CARD_HAND; i++) {
-        printf("\n\n|RODADA %d|\n\n", i + 1);
         for (int j = 0; j < players; j++) {
           if (online[j] && score(hands[j], MAX_CARD_HAND) != -1) {
+            printf("\n\n|RODADA %d|\n\n", i + 1);
             printf("Vez do Jogador %d:\n1 - Sacar | 0 - Passar\n", j + 1);
             int choose;
             scanf("%d", &choose);
@@ -90,10 +91,10 @@ int main(int argc, char const *argv[]) {
         break;
       }
     }
+
     printf("Deseja repetir a partida (0 - Nao | 1 - Sim)? ");
     scanf("%d", &flag);
     if (flag == 0) break;
-
   }
 
   return 0;
